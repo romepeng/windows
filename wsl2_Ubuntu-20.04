@@ -1,0 +1,36 @@
+#Using WSL to Build a Python Development Environment on Windows
+https://pbpython.com/wsl-python.html
+need:
+windows10 2004-19041
+# power shell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+# get Ubuntu-20.04 from microsoft store
+create name and passwd
+sudo apt update
+sudo apt upgrade
+# wsl1 to wsl2
+power shell:
+wsl -l -v
+wsl --set-version Ubuntu-20.04 2
+wsl -l -v
+wsl --set-default-version 2
+
+get Windows Terminal from microsoft store
+
+install miniconda
+install vs code on windows
+
+code .
+
+explorer.exe
+mount |grep C:
+TODO \\wsl$\Ubuntu\home\rome
+
+
+#ctrl+shfit+c--V
+jupyter notebook --no-browser 
+
+
+What about running Graphical Apps?
