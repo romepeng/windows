@@ -7,6 +7,8 @@ start at U efui(优启通) --F12
 check disk by disk tools;(create esi & mrs partion);
 pe-- cmd-- d:setup.exe;
 
+activate win-business by kms-03k.org
+
 second--config:
 power on time config in bios;
 use regedit-- loginon no password;
