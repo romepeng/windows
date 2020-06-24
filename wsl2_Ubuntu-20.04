@@ -8,6 +8,22 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 # get Ubuntu-20.04 from microsoft store
 create name and passwd
+
+cp /etc/apt/sources.list /etc/apt/sources.list.bak
+vim /etc/apt/sources.list
+将内容替换为下方：
+deb http://mirrors.aliyun.com/ubuntu/ focal main restricted
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted
+deb http://mirrors.aliyun.com/ubuntu/ focal universe
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates universe
+deb http://mirrors.aliyun.com/ubuntu/ focal multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted
+deb http://mirrors.aliyun.com/ubuntu/ focal-security universe
+deb http://mirrors.aliyun.com/ubuntu/ focal-security multiverse
+
+#链接：https://www.jianshu.com/p/a20c2d58eaac
 sudo apt update
 sudo apt upgrade
 # wsl1 to wsl2
@@ -29,6 +45,7 @@ or
 explorer.exe .
 mount |grep C:
 
+#install docker
 
 
 #ctrl+shfit+c--V
