@@ -24,9 +24,11 @@ install vs code on windows
 
 code .
 
-explorer.exe
+\\wsl$\Ubuntu-20.04\home\rome
+or
+explorer.exe .
 mount |grep C:
-TODO \\wsl$\Ubuntu\home\rome
+
 
 
 #ctrl+shfit+c--V
