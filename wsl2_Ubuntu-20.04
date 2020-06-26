@@ -51,5 +51,22 @@ mount |grep C:
 #ctrl+shfit+c--V
 jupyter notebook --no-browser 
 
+#ubuntu20.04设置开机启动
+sudo vim /lib/systemd/system/rc-local.service
+在文件尾部中添加：
+[Install]
+WantedBy=multi-user.target
+Alias=rc-local.service
+#随后创建rc.local文件，
+sudo vim /etc/rc.local
+并添加以下内容： #不能添加阻塞进程 不然开机卡死
+#!/bin/sh
+echo "看到这行字，说明添加自启动脚本成功。" > /usr/local/test.log
+/root/trojan/trojand start
+/root/proxychains-ng/proxychains4 -c /etc/proxychains.conf
+exit 0
+#给rc.local加上权限
+sudo chmod +x /etc/rc.local
+reboot -f
+check: proxychau=ins4 curl ip.sb
 
-What about running Graphical Apps?
