@@ -1,0 +1,32 @@
+#如何在 Ubuntu 20.04 上安装和使用 Docker
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+
+sudo apt update
+apt list -a docker-ce
+
+sudo systemctl status docker
+你可以通过锁定Docker的版本来阻止 Docker 自动更新：
+sudo apt-mark hold docker-ce
+
+sudo usermod -aG docker $USER
+
+docker cont
+ainer run hello-world
+卸载 Docker
+在卸载 Docker 之前，你最好移除所有的容器，镜像，卷和网络。
+运行下面的命令停止所有正在运行的容器，并且移除所有的 docker 对象:
+
+docker container stop $(docker container ls -aq)
+docker system prune -a --volumes
+接下来你可以使用apt命令来卸载 Docker：
+
+sudo apt purge docker-ce
+sudo apt autoremove
