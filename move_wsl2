@@ -1,0 +1,18 @@
+# move wsl distributions to windows10 no system dir and import to setup
+https://www.hanselman.com/blog/EasilyMoveWSLDistributionsBetweenWindows10MachinesWithImportAndExport.aspx
+ using PowerShell:
+ wsl --shutdown
+ wsl -l -v
+ wsl --set-version dis
+ wsl --help
+ 
+ wsl -- export dis d:\wsl\disname.tar
+ for example: wsl --export Ubuntu-20.04 D:\Ubuntu\Ubuntu-20.04.tar
+ 
+ c:\users\romepeng\
+ mkdir ~/AppData/Local/disname
+ 
+ swl --import disname ~/AppData/Local/disname d:/wsl/disname.tar --version 2
+ 
+ wsl -l -v
+ 
