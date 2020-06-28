@@ -12,7 +12,12 @@ https://www.hanselman.com/blog/EasilyMoveWSLDistributionsBetweenWindows10Machine
  c:\users\romepeng\
  mkdir ~/AppData/Local/disname
  
- swl --import disname ~/AppData/Local/disname d:/wsl/disname.tar --version 2
+ swl --import disname .\AppData\Local\disname d:\wsl\disname.tar 
  
  wsl -l -v
+ wsl -d disname_new
+ 
+ swl --unregister dis_old
+ 
+ 
  
